@@ -1,15 +1,14 @@
 package com.balitechy.karyaagung;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import de.greenrobot.event.EventBus;
 
-@SuppressLint("NewApi")
-public class EventDetails extends Activity {
+
+public class EventDetails extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +30,11 @@ public class EventDetails extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
+	    	case R.id.action_settings:
+		    	DialogFragment about = new About();
+		    	about.show(getSupportFragmentManager(), "about");
+		    	break;
+		    	
 		    // Respond to the action bar's Up/Home button
 		    case android.R.id.home:
 		    	finish();

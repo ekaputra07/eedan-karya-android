@@ -9,17 +9,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import de.greenrobot.event.EventBus;
 
-public class KaryaAgung extends Activity implements OnItemClickListener{
+public class KaryaAgung extends FragmentActivity implements OnItemClickListener{
 	
 	private int dbVersion;
 	private ListView listView;
@@ -88,5 +90,15 @@ public class KaryaAgung extends Activity implements OnItemClickListener{
 			e.printStackTrace();
 		}
 	}
-
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+		    case R.id.action_settings:
+		    	DialogFragment about = new About();
+		    	about.show(getSupportFragmentManager(), "about");
+		    	break;
+	    }
+	    return super.onOptionsItemSelected(item);
+	}
 }
