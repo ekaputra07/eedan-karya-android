@@ -5,7 +5,9 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_list_item"
     android:orientation="vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp" >
 
     <TextView
         android:id="@+id/tanggal"
@@ -40,7 +42,7 @@
         android:layout_alignTop="@+id/tanggal"
         android:text="Galah"
         android:textColor="@color/grey1"
-        android:textSize="12dp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/tags"
@@ -51,6 +53,6 @@
         android:layout_alignRight="@+id/rahina"
         android:text="tags"
         android:textColor="@color/red2"
-        android:textSize="10dp" />
+        android:textSize="10sp" />
 
 </RelativeLayout>

@@ -28,16 +28,68 @@ public class SubEvent {
 		return pemargi;
 	}
 	
+	public String getPemargiFormatted(){
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=0; i < pemargi.size(); i++){
+			if(i == pemargi.size()-1){
+				builder.append("- " + pemargi.get(i));
+			}else{
+				builder.append("- " + pemargi.get(i) + "\n");
+			}
+		}
+		return builder.toString();
+	}
+	
 	public List<String> getSaneMuput(){
 		return saneMuput;
+	}
+	
+	public String getSaneMuputFormatted(){
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=0; i < saneMuput.size(); i++){
+			if(i == saneMuput.size()-1){
+				builder.append("- " + saneMuput.get(i));
+			}else{
+				builder.append("- " + saneMuput.get(i) + "\n");
+			}
+		}
+		return builder.toString();
 	}
 	
 	public List<String> getGenah(){
 		return genah;
 	}
 	
+	public String getGenahFormatted(){
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=0; i < genah.size(); i++){
+			if(i == genah.size()-1){
+				builder.append("- " + genah.get(i));
+			}else{
+				builder.append("- " + genah.get(i) + "\n");
+			}
+		}
+		return builder.toString();
+	}
+	
 	public List<String> getWewalian(){
 		return wewalian;
+	}
+	
+	public String getWewalianFormatted(){
+		StringBuilder builder = new StringBuilder();
+		
+		for(int i=0; i < wewalian.size(); i++){
+			if(i == wewalian.size()-1){
+				builder.append("- " + wewalian.get(i));
+			}else{
+				builder.append("- " + wewalian.get(i) + "\n");
+			}
+		}
+		return builder.toString();
 	}
 	
 	public void parseSubEvent(){

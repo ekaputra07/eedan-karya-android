@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativelay"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/detail_galah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Galah"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+    
+    <!-- block genah -->
+
+    <TextView
+        android:id="@+id/detail_label_genah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_galah"
+        android:layout_marginTop="8dp"
+        android:text="Genah:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    
+    <FrameLayout
+        android:id="@+id/detail_frame_genah"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_label_genah"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:padding="5dp" >
+       
+       <TextView
+           android:id="@+id/detail_genah"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="left"
+           android:text="- genah"
+           android:textColor="@color/black"
+           android:textSize="14sp" />
+
+    </FrameLayout>
+
+    <!-- block pemargi -->
+
+    <TextView
+        android:id="@+id/detail_label_pemargi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_frame_genah"
+        android:layout_marginTop="8dp"
+        android:text="Eedan Pemargi:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    
+    <FrameLayout
+        android:id="@+id/detail_frame_pemargi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_label_pemargi"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:padding="5dp" >
+       
+       <TextView
+           android:id="@+id/detail_pemargi"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="left"
+           android:text="- pemargi"
+           android:textColor="@color/black"
+           android:textSize="14sp" />
+
+    </FrameLayout>
+
+    <!-- block sane muput -->
+
+    <TextView
+        android:id="@+id/detail_label_pamuput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_frame_pemargi"
+        android:layout_marginTop="8dp"
+        android:text="Sane Muput:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    
+    <FrameLayout
+        android:id="@+id/detail_frame_pemuput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_label_pamuput"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:padding="5dp" >
+       
+       <TextView
+           android:id="@+id/detail_pemuput"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="left"
+           android:text="- sane muput"
+           android:textColor="@color/black"
+           android:textSize="14sp" />
+
+    </FrameLayout>
+    
+    <!-- block wewalian-->
+
+    <TextView
+        android:id="@+id/detail_label_wewalian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_frame_pemuput"
+        android:layout_marginTop="8dp"
+        android:text="Wewalian:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    
+    <FrameLayout
+        android:id="@+id/detail_frame_wewalian"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_label_wewalian"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:padding="5dp" >
+       
+       <TextView
+           android:id="@+id/detail_wewalian"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:gravity="left"
+           android:text="- wewalian"
+           android:textColor="@color/black"
+           android:textSize="14sp" />
+
+    </FrameLayout>
+    
+</RelativeLayout>

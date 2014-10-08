@@ -73,6 +73,9 @@ public class Event{
 		return builder.toString();
 	}
 	
+	public List<SubEvent> getSubEvents(){
+		return subevents;
+	}
 	private List<SubEvent> parseSubEvents(JSONObject eventJson){
 		try {
 			JSONArray subeventsJA = eventJson.getJSONArray("subevents");

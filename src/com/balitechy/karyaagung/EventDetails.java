@@ -5,10 +5,17 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 import de.greenrobot.event.EventBus;
 
 
 public class EventDetails extends FragmentActivity {
+	
+	private TextView rahinaText, pakelingText;
+	private ListView subeventListView;
+	private SubEventListAdapter subeventlistAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +24,23 @@ public class EventDetails extends FragmentActivity {
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
+		//Display event details information
 		Event event = (Event) EventBus.getDefault().removeStickyEvent(Event.class);
 		setTitle(event.getTanggal());
+		
+		rahinaText = (TextView) findViewById(R.id.detail_rahina);
+		rahinaText.setText(event.getRahina());
+		
+		pakelingText = (TextView) findViewById(R.id.detail_pakeling);
+		pakelingText.setText(event.getPakeling());
+		if(event.getPakeling() == "null"){
+			pakelingText.setVisibility(View.GONE);
+		}
+		
+		subeventListView = (ListView) findViewById(R.id.detail_subevents_list);
+		
+		subeventlistAdapter = new SubEventListAdapter(event.getSubEvents(), this);
+		subeventListView.setAdapter(subeventlistAdapter);
 	}
 
 	@Override
