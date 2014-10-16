@@ -4,6 +4,8 @@
     <color name="red2">#bd0f00</color>
     <color name="grey">#f7f7f7</color>
     <color name="grey1">#777777</color>
+    <color name="grey2">#cccccc</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="green">#e1ffbf</color>
 </resources>

@@ -2,11 +2,15 @@ package com.balitechy.karyaagung;
 
 import java.util.List;
 
+import com.balitechy.karyaagung.R.color;
+
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class EventListAdapter extends BaseAdapter{
@@ -52,6 +56,14 @@ public class EventListAdapter extends BaseAdapter{
 		
 		TextView tagsText = (TextView) convertView.findViewById(R.id.tags);
 		tagsText.setText(eventList.get(index).getTagsText());
+		
+		if(eventList.get(index).isToday()){
+			convertView.setBackgroundResource(R.drawable.bg_list_item_today);
+		}else if(eventList.get(index).isPast()){
+			convertView.setBackgroundResource(R.drawable.bg_list_item_expired);
+		}else{
+			convertView.setBackgroundResource(R.drawable.bg_list_item);
+		}
 		
 		return convertView;
 	}

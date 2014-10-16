@@ -116,7 +116,7 @@ public class SubEvent {
 			}
 			
 			// wewalian
-			JSONArray wewalianJA = subeventJson.getJSONArray("genah");
+			JSONArray wewalianJA = subeventJson.getJSONArray("wewalian");
 			for(int i=0; i < wewalianJA.length(); i++){
 				wewalian.add(wewalianJA.getString(i));
 			}

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class SubEventListAdapter extends BaseAdapter{
@@ -51,21 +52,25 @@ public class SubEventListAdapter extends BaseAdapter{
 		pemargi.setText(subeventList.get(index).getPemargiFormatted());
 		
 		TextView saneMuputLabel = (TextView) convertView.findViewById(R.id.detail_label_pamuput);
+		FrameLayout saneMuputFrame = (FrameLayout) convertView.findViewById(R.id.detail_frame_pemuput);
 		TextView saneMuput = (TextView) convertView.findViewById(R.id.detail_pemuput);
 		saneMuput.setText(subeventList.get(index).getSaneMuputFormatted());
 		
 		if(subeventList.get(index).getSaneMuput().size() == 0){
 			saneMuputLabel.setVisibility(View.GONE);
 			saneMuput.setVisibility(View.GONE);
+			saneMuputFrame.setVisibility(View.GONE);
 		}
 		
 		TextView wewalianLabel = (TextView) convertView.findViewById(R.id.detail_label_wewalian);
+		FrameLayout wewalianFrame = (FrameLayout) convertView.findViewById(R.id.detail_frame_wewalian);
 		TextView wewalian = (TextView) convertView.findViewById(R.id.detail_wewalian);
 		wewalian.setText(subeventList.get(index).getWewalianFormatted());
 		
 		if(subeventList.get(index).getWewalian().size() == 0){
 			wewalianLabel.setVisibility(View.GONE);
 			wewalian.setVisibility(View.GONE);
+			wewalianFrame.setVisibility(View.GONE);
 		}
 		
 		return convertView;

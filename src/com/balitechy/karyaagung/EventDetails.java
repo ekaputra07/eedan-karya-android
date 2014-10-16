@@ -25,7 +25,7 @@ public class EventDetails extends FragmentActivity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		//Display event details information
-		Event event = (Event) EventBus.getDefault().removeStickyEvent(Event.class);
+		Event event = (Event) EventBus.getDefault().getStickyEvent(Event.class);
 		setTitle(event.getTanggal());
 		
 		rahinaText = (TextView) findViewById(R.id.detail_rahina);

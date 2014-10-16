@@ -18,8 +18,8 @@
         android:maxLines="1"
         android:text="Tanggal"
         android:textColor="@color/black"
-        android:textSize="16dp">
-    </TextView>
+        android:textSize="16dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/rahina"
@@ -31,8 +31,7 @@
         android:maxLines="1"
         android:text="Rahina"
         android:textColor="@color/grey1"
-        android:textSize="12dp" >
-    </TextView>
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/galah"

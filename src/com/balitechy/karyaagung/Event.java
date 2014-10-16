@@ -1,7 +1,12 @@
 package com.balitechy.karyaagung;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,6 +16,8 @@ public class Event{
 	private String tanggal;
 	private String rahina;
 	private String pakeling;
+	private boolean isPast = false;
+	private boolean isToday = false;
 	private List<SubEvent> subevents = new ArrayList<SubEvent>();
 	private JSONObject eventJson;
 	
@@ -22,11 +29,55 @@ public class Event{
 	public String getTanggal(){
 		try {
 			tanggal = eventJson.getString("tanggal");
+			parseTanggal();
 		} catch (JSONException e) {
 			e.printStackTrace();
 			return null;
 		}
 		return tanggal;
+	}
+	
+	private void parseTanggal(){
+		String newDateString = null;
+		Date eventDate, currentDate;
+		
+		Map<String, String> months = new HashMap<String, String>();
+		months.put("Agustus", "Aug");
+		months.put("Oktober", "Oct");
+		months.put("November", "Nov");
+		months.put("Desember", "Dec");
+		months.put("Januari", "Jan");
+		
+		for(Map.Entry<String, String> entry: months.entrySet()){
+			if(tanggal.indexOf(entry.getKey()) > -1){
+				newDateString = tanggal.replace(entry.getKey(), entry.getValue());
+				break;
+			}
+		}
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
+		try {
+			eventDate = formatter.parse(newDateString);
+			currentDate = new Date();
+			long delta = eventDate.getTime() - currentDate.getTime();
+			if(delta < 0){
+				isPast = true;
+			}
+			
+			if(delta/(1000*60*60*24) == 0){
+				isToday = true;
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean isPast(){
+		return isPast;
+	}
+	
+	public boolean isToday(){
+		return isToday;
 	}
 	
 	public String getRahina(){
@@ -76,7 +127,7 @@ public class Event{
 	public List<SubEvent> getSubEvents(){
 		return subevents;
 	}
-	private List<SubEvent> parseSubEvents(JSONObject eventJson){
+	private void parseSubEvents(JSONObject eventJson){
 		try {
 			JSONArray subeventsJA = eventJson.getJSONArray("subevents");
 			for(int i=0; i < subeventsJA.length(); i++){
@@ -85,6 +136,5 @@ public class Event{
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		return subevents;
 	}
 }
